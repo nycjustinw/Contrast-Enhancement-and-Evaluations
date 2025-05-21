@@ -1,0 +1,11 @@
+Image Name,PSNR (Original vs Preprocessed),PSNR (Preprocessed vs Adapative Local Thresholded),PSNR (Original vs Adaptive Local Thresholded)
+1-111.jpg,6.30,4.30,6.92
+1-263.jpg,12.08,4.07,4.60
+1-075.jpg,11.60,4.50,6.82
+1-198.jpg,7.86,5.41,8.53
+1-014.jpg,8.06,5.56,8.25
+1-030.jpg,12.84,4.61,6.61
+1-231.jpg,6.09,3.24,5.63
+1-196.jpg,12.60,5.98,7.99
+1-126.jpg,11.14,5.14,7.65
+1-108.jpg,11.22,6.27,9.13

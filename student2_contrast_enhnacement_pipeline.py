@@ -28,8 +28,8 @@ def normalize_channels(img):
     b_norm = b / total
     return np.stack((b_norm, g_norm, r_norm), axis=-1) #recombine channels
 
-# Gamma correction on the difference between grayscale and normalized image
-def gamma_correction_combo(gray, norm_rgb, gamma=0.8):
+# Gamma correction on the difference between grayscale and rgb normalized images
+def gamma_correction_combo(gray, norm_rgb, gamma):
     # Normalize grayscale to [0, 1]
     gray_norm = gray.astype(np.float32) / 255.0
 
@@ -74,7 +74,7 @@ def full_contrast_pipeline(image_path, threshold=100, alpha=0.6, gamma=0.8):
 
     gray = convert_rgb_to_grayscale(img_rgb) # Step 1a: output a grayscale version of the original
     norm_rgb = normalize_channels(img_rgb) # Step 1b: output a normalized version of the original
-    gamma_img = gamma_correction_combo(gray, norm_rgb, gamma) # Step 2: Difference combine and gamma correction of the grayscale and normalized imgs
+    gamma_img = gamma_correction_combo(gray, norm_rgb, gamma) # Step 2: Difference combine and gamma correction of the grayscale and rgb normalized imgs
     blended = alpha_blend(gray, gamma_img, alpha) # Step 3: Alpha blend the grayscale img with the gamma corrected combined (gray + normalized) img
     enhanced = optimal_piecewise_contrast(blended, threshold) # Step 4: Perform piecewise contrast enhancement on the final blended output
 
