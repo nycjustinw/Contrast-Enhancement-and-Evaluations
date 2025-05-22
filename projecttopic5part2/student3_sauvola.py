@@ -1,3 +1,6 @@
+# Justin Wang
+# Student 3
+
 import os
 import cv2
 import numpy as np
